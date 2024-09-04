@@ -15,7 +15,7 @@
      $connexion = new PDO("mysql:host=$serveur;dbname=tachephp", $login, $pass);
      $connexion -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $foncsql = "SELECT COUNT(*) FROM table";
+    $foncsql = "SELECT COUNT(DISTINCT) FROM incrits";
     $requete = $connexion->prepare( $foncsql);
     $requete->execute();
 
