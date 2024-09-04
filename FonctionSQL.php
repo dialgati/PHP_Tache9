@@ -15,7 +15,10 @@
      $connexion = new PDO("mysql:host=$serveur;dbname=tachephp", $login, $pass);
      $connexion -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $foncsql = "SELECT MAX(age) FROM incrits";
+/* The SQL query `SELECT AVG(dons), age FROM incrits GROUP BY age HAVING AVG(dons) > 4` is performing
+the following actions: */
+    $foncsql = "SELECT AVG(dons), age  FROM incrits GROUP BY age HAVING AVG(dons) > 4";
+
     $requete = $connexion->prepare( $foncsql);
     $requete->execute();
     
