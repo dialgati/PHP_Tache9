@@ -15,10 +15,10 @@
      $connexion = new PDO("mysql:host=$serveur;dbname=tachephp", $login, $pass);
      $connexion -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $foncsql = "SELECT COUNT(DISTINCT) FROM incrits";
+    $foncsql = "SELECT MAX(age) FROM incrits";
     $requete = $connexion->prepare( $foncsql);
     $requete->execute();
-
+    
     $resultat = $requete->fetchAll();
     echo '<pre>';
     print_r($resultat);
