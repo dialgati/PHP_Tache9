@@ -17,7 +17,7 @@
 
 /* The SQL query `SELECT AVG(dons), age FROM incrits GROUP BY age HAVING AVG(dons) > 4` is performing
 the following actions: */
-    $foncsql = "SELECT AVG(dons), age  FROM incrits GROUP BY age HAVING AVG(dons) > 4";
+    $foncsql = "SELECT AVG(dons), age  FROM incrits WHERE nom!='Athie'  GROUP BY age HAVING AVG(dons) > 4";
 
     $requete = $connexion->prepare( $foncsql);
     $requete->execute();
