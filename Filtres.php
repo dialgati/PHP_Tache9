@@ -15,19 +15,23 @@
     //  $connexion = new PDO("mysql:host=$serveur;dbname=tachephp", $login, $pass);
     //  $connexion -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // filtre pour trouver un entier
+    // Verifier la vqlidqtion d'un mail
 
-        $email1 = "ducobi@gmail.com";
-        $email2 = "ducobi@gmail";
+        $email = "g/d/handalons@g(mail).com";
 
-        $email2 = filter_var($email2, FILTER_SANITIZE_EMAIL);
-        echo $email2;
+        $emailnew = filter_var($email, FILTER_SANITIZE_EMAIL);
 
-        if(!filter_var($email2, FILTER_VALIDATE_EMAIL) === false){
-            echo 'Le mail ' .$email2. ' possède une forme valide</br>';
+        if(!filter_var($emailnew, FILTER_VALIDATE_EMAIL) === false){
+            if($emailnew != $email){
+                echo 'Le mail possède désormais une forme valide.<br/>
+                Mail envoyé : ' .$email . '<br/>
+                Mail aprés transformation : '.$emailnew;
         }else{
-            echo 'Le mail ' .$email2. ' n\'est pas valide<br/>';
+            echo 'Adresse email valide';
         }
+    }else {
+        echo 'Adresse invalide';
+    }
         
     
     // $resultat = $requete->fetchAll();
