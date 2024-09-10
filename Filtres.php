@@ -15,22 +15,20 @@
     //  $connexion = new PDO("mysql:host=$serveur;dbname=tachephp", $login, $pass);
     //  $connexion -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // Verifier la vqlidqtion d'un mail
+    // Verifier la validation d'un url
 
-        $email = "g/d/handalons@g(mail).com";
+        $url1 = "http://peéérre-maodo.sn";
 
-        $emailnew = filter_var($email, FILTER_SANITIZE_EMAIL);
+        $newurl = filter_var($url1, FILTER_SANITIZE_URL);
 
-        if(!filter_var($emailnew, FILTER_VALIDATE_EMAIL) === false){
-            if($emailnew != $email){
-                echo 'Le mail possède désormais une forme valide.<br/>
-                Mail envoyé : ' .$email . '<br/>
-                Mail aprés transformation : '.$emailnew;
+        if(!filter_var($newurl, FILTER_VALIDATE_URL) === false){
+            if($newurl != $url1){
+                echo 'L\'url ' .$url1 . ' a été modifié en '.$newurl.' afin de la rendre valide<br/>';
         }else{
-            echo 'Adresse email valide';
+            echo 'url valide';
         }
     }else {
-        echo 'Adresse invalide';
+        echo 'url invalide';
     }
         
     
