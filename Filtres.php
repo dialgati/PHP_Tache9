@@ -17,16 +17,20 @@
 
     // filtre pour trouver un entier
 
-        $int1 = 200;
-        $int2 = 'aaa';
-        $int3  = "0";
+        $int1 = 0;
+        $int2 = 50;
+        $int3  = 150;
 
-        if(filter_var($int3, FILTER_VALIDATE_INT) === 0 OR
-            !filter_var($int3, FILTER_VALIDATE_INT) === false){
-            echo "La variable contient bien un nombre entier valide </br>";
-        } else{
-            echo "La variable ne contient d'entier valide </br>";
+        $min = 1;
+        $max  = 100;
+
+        if(!filter_var($int3, FILTER_VALIDATE_INT,
+        array("options" => array("min_range"=>$min, "max_range"=>$max))) == false){
+            echo "Le nombre est dans la bonne fourchette";
+        } else {
+            echo "Nombre incorrect ou non entier";
         }
+        
     
     // $resultat = $requete->fetchAll();
     // echo '<pre>';
