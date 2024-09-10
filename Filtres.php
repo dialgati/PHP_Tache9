@@ -17,18 +17,16 @@
 
     // filtre pour trouver un entier
 
-        $int1 = 0;
-        $int2 = 50;
-        $int3  = 150;
+        $email1 = "ducobi@gmail.com";
+        $email2 = "ducobi@gmail";
 
-        $min = 1;
-        $max  = 100;
+        $email2 = filter_var($email2, FILTER_SANITIZE_EMAIL);
+        echo $email2;
 
-        if(!filter_var($int3, FILTER_VALIDATE_INT,
-        array("options" => array("min_range"=>$min, "max_range"=>$max))) == false){
-            echo "Le nombre est dans la bonne fourchette";
-        } else {
-            echo "Nombre incorrect ou non entier";
+        if(!filter_var($email2, FILTER_VALIDATE_EMAIL) === false){
+            echo 'Le mail ' .$email2. ' possède une forme valide</br>';
+        }else{
+            echo 'Le mail ' .$email2. ' n\'est pas valide<br/>';
         }
         
     
