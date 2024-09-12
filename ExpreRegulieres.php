@@ -7,24 +7,22 @@
 </head>
 <body>
     <?php
-        $r = "J'apprends à coder";
-        $regex1 = "coder";
-        $regex2 = "ode";
-        $regex3 = "CoDeR";
+        $r = "J'apprends à coder1";
 
-        if (preg_match("/$regex1/",$r)) {
+
+        if (preg_match("/[a-z]/",$r)) {
+            echo "L'expression a bien été trouvée<br/>";
+        }else {
+            echo "Expression non trouvée<br/>";
+        }
+        
+        if (preg_match("/^[A-Z]/",$r)) {
             echo "L'expression a bien été trouvée<br/>";
         }else {
             echo "Expression non trouvée<br/>";
         }
 
-         if (preg_match("/$regex2/",$r)) {
-            echo "L'expression a bien été trouvée<br/>";
-        }else {
-            echo "Expression non trouvée<br/>";
-        }
-
-        if (preg_match("/$regex3/i",$r)) {
+        if (preg_match("/[0-9]/i",$r)) {
             echo "L'expression a bien été trouvée<br/>";
         }else {
             echo "Expression non trouvée<br/>";
