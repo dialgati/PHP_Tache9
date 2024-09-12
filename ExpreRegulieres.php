@@ -7,26 +7,26 @@
 </head>
 <body>
     <?php
-        $r = "J'apprends à coder1";
+        $r = "J'apprends à coder.";
 
 
-        if (preg_match("/[a-z]/",$r)) {
+        if (preg_match("/\w/",$r)) {
             echo "L'expression a bien été trouvée<br/>";
         }else {
             echo "Expression non trouvée<br/>";
         }
         
-        if (preg_match("/^[A-Z]/",$r)) {
-            echo "L'expression a bien été trouvée<br/>";
-        }else {
-            echo "Expression non trouvée<br/>";
-        }
+        // if (preg_match("/^[A-Z]/",$r)) {
+        //     echo "L'expression a bien été trouvée<br/>";
+        // }else {
+        //     echo "Expression non trouvée<br/>";
+        // }
 
-        if (preg_match("/[0-9]/i",$r)) {
-            echo "L'expression a bien été trouvée<br/>";
-        }else {
-            echo "Expression non trouvée<br/>";
-        }
+        // if (preg_match("/[0-9]/i",$r)) {
+        //     echo "L'expression a bien été trouvée<br/>";
+        // }else {
+        //     echo "Expression non trouvée<br/>";
+        // }
     ?>
 </body>
 </html>
