@@ -30,6 +30,7 @@
     }else {
         echo 'url invalide';
     }
+    
         
     
     // $resultat = $requete->fetchAll();
